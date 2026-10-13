@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boxer Gestión | Sistema para casas de repuestos + IA</title>
+<meta name="description" content="Boxer centraliza los datos de tu casa de repuestos, taller o lubricentro. Sumá IA a tu negocio y llevate el curso básico de Claude gratis.">
+<link rel="canonical" href="https://boxergestion.com/cerac-locro-2026">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Boxer Gestión | Todos los datos de tu negocio en un solo lugar">
+<meta property="og:description" content="El único sistema pensado exclusivamente para casas de repuestos, talleres y lubricentros.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://boxergestion.com/cerac-locro-2026.html">
+<meta property="og:image" content="https://boxergestion.com/img/portada-clase-1.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap">
+<style>
+:root {
+  /* ——— BRAND COLORS ————————————————————————————————————————————————— */
+  /* Primary gradient stops (the diagonal blue is the brand's signature) */
+  --bx-blue-primary:   #3A75C5;   /* rgb(58,117,197)  — gradient start    */
+  --bx-blue-secondary: #5156EB;   /* rgb(81,86,235)   — gradient end      */
+  --bx-blue-dark:      #18163D;   /* rgb(24,22,61)    — dark background   */
+  --bx-blue-deeper:    #0B0365;   /* rgb(11,3,101)    — capsule / chip BG */
+
+  /* Accents */
+  --bx-orange:         #EA9835;   /* rgb(234,152,53)  — CTA / highlights  */
+  --bx-orange-deep:    #D47B0F;   /* rgb(212,123,15)  — pressed / focus   */
+
+  /* Neutrals */
+  --bx-white:          #FFFFFF;
+  --bx-bg-light:       #F9F9F9;   /* soft off-white page background       */
+  --bx-bg-muted:       #F6F6F6;
+  --bx-chip-gray:      #EDEDED;   /* speech-bubble / card BG on dark      */
+  --bx-text-muted:     #404040;
+  --bx-border:         #D9D9D9;
+
+  /* Extra tints seen in file (keep for parity) */
+  --bx-violet-deep:    #170B5D;
+  --bx-magenta:        #A30F7D;   /* used in a Maspedidos gradient        */
+
+  /* ——— THE GRADIENTS — always 135° (top-left → bottom-right) ————————— */
+  --bx-gradient-primary:
+    linear-gradient(135deg, var(--bx-blue-primary) 0%, var(--bx-blue-secondary) 100%);
+  --bx-gradient-dark:
+    linear-gradient(135deg, var(--bx-blue-dark) 0%, #16134B 100%);
+  --bx-gradient-maspedidos:
+    linear-gradient(135deg, #3D70CA 0%, var(--bx-magenta) 100%);
+
+  /* ——— SEMANTIC ———————————————————————————————————————————————————— */
+  --bx-bg:             var(--bx-bg-light);
+  --bx-fg:             var(--bx-blue-dark);
+  --bx-fg-on-dark:     var(--bx-white);
+  --bx-fg-muted:       #5D5D5D;
+  --bx-accent:         var(--bx-orange);
+  --bx-link:           var(--bx-blue-primary);
+
+  /* ——— TYPOGRAPHY ————————————————————————————————————————————————— */
+  --bx-font-sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  /* Weights (locked to what the brand actually ships) */
+  --bx-weight-regular:  400;
+  --bx-weight-medium:   500;
+  --bx-weight-bold:     700;
+  --bx-weight-xbold:    800;
+  --bx-weight-black:    900;
+
+  /* Fluid-ish type scale (tuned for 1080×1080 posts AND desktop pages) */
+  --bx-fs-display:   clamp(56px, 8vw, 120px);   /* hero / portada title   */
+  --bx-fs-h1:        clamp(40px, 5vw, 72px);
+  --bx-fs-h2:        clamp(30px, 3.4vw, 50px);
+  --bx-fs-h3:        clamp(22px, 2vw, 32px);
+  --bx-fs-body:      18px;
+  --bx-fs-small:     14px;
+  --bx-fs-caption:   12px;
+
+  /* Line heights */
+  --bx-lh-tight:     1.02;  /* black titles, Montserrat 900, all caps     */
+  --bx-lh-snug:      1.15;
+  --bx-lh-normal:    1.5;   /* body copy default                          */
+
+  /* Letter spacing (brand uses +1% on caps titles) */
+  --bx-tracking-caps: 0.01em;
+
+  /* ——— SPACING / RADII / SHADOW ——————————————————————————————————— */
+  --bx-space-1:  4px;
+  --bx-space-2:  8px;
+  --bx-space-3:  12px;
+  --bx-space-4:  16px;
+  --bx-space-5:  24px;
+  --bx-space-6:  32px;
+  --bx-space-7:  48px;
+  --bx-space-8:  64px;
+  --bx-space-9:  96px;
+
+  --bx-radius-sm:   12px;
+  --bx-radius-md:   24px;   /* chips / inline capsules (see conferencia)  */
+  --bx-radius-lg:   32px;   /* speech bubbles / large cards               */
+  --bx-radius-pill: 999px;  /* CTA buttons                                */
+
+  /* Soft brand shadow (matches rgba(0,0,0,0.25) seen in file) */
+  --bx-shadow-sm: 0 2px  6px  rgba(0,0,0,0.12);
+  --bx-shadow-md: 0 8px  24px rgba(0,0,0,0.18);
+  --bx-shadow-lg: 0 20px 48px rgba(0,0,0,0.25);
+
+  /* Motion */
+  --bx-ease:        cubic-bezier(0.22, 1, 0.36, 1);
+  --bx-duration-1:  120ms;
+  --bx-duration-2:  220ms;
+  --bx-duration-3:  400ms;
+}
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; font-family: 'Montserrat', system-ui, sans-serif; background: #FFFFFF; }
+  * { box-sizing: border-box; }
+  a { color: #3976C4; text-decoration: none; }
+  a:hover { color: #5155EC; }
+  input, select, button { font-family: 'Montserrat', system-ui, sans-serif; }
+  input:focus, select:focus { outline: 2px solid #5155EC; outline-offset: 1px; }
+
+
+.cond { display: none; }
+.cond.on { display: contents; }
+button[disabled] { opacity: .65; cursor: default; }
+.hv1:hover { filter: brightness(1.08) }
+.hv2:hover { filter: brightness(1.1) }
+.hv3:hover { filter: brightness(1.08) }
+.hv4:hover { background: #C97612 }
+.hv5:hover { background: rgba(255,255,255,0.1); color: #FFFFFF }
+.hv6:hover { color: #FFFFFF }
+.hv7:hover { color: #FFFFFF }
+.hv8:hover { color: #FFFFFF }
+</style>
+</head>
+<body>
+<div style="width: 100%; background: #FFFFFF; overflow-x: hidden;">
+
+  <div data-screen-label="Franja" style="background: #18163F; color: #FFFFFF; padding: 12px 20px; text-align: center; font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em;">LOCRO CERAC 2026 🚀</div>
+
+  <section data-screen-label="Hero" style="background: #18163F; color: #FFFFFF; padding: clamp(48px, 7vw, 96px) 22px clamp(56px, 7vw, 104px); min-height: min(90svh, max(0px, calc(58vw - 180px))); display: flex; align-items: center; justify-content: center;">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(24px, 2.6vw, 34px);">
+      <img src="img/logo-boxer-blanco.png" alt="Boxer Gestión" style="width: clamp(138px, 14vw, 190px); height: auto; display: block;">
+      <h1 style="margin: 0; font-size: clamp(31px, 5.2vw, 62px); line-height: 1.08; font-weight: 800; letter-spacing: -0.015em; text-wrap: pretty;">Todos los datos de tu negocio en un solo lugar. Y ahora, con IA.</h1>
+      <p style="margin: 0; max-width: 620px; font-size: clamp(16.5px, 1.35vw, 19px); line-height: 1.6; font-weight: 400; color: rgba(255,255,255,0.82); text-wrap: pretty;">Boxer es el único sistema pensado exclusivamente para casas de repuestos, talleres y lubricentros.</p>
+      <a href="#ia" style="margin-top: 6px; display: flex; align-items: center; justify-content: center; padding: 18px 38px; border-radius: 999px; background: linear-gradient(135deg, #3976C4 0%, #5155EC 100%); color: #FFFFFF; font-size: clamp(15px, 1.15vw, 16.5px); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;" class="hv1">Ver cómo usar IA</a>
+    </div>
+  </section>
+
+  <section data-screen-label="Problema" style="background: #F9F9F9; padding: clamp(60px, 6vw, 100px) 22px;">
+    <div style="max-width: 1140px; margin: 0 auto;">
+      <h2 style="margin: 0 0 clamp(30px, 3vw, 46px); max-width: 860px; font-size: clamp(25px, 3.3vw, 44px); line-height: 1.15; font-weight: 800; color: #18163F; letter-spacing: -0.015em; text-wrap: pretty;">El problema no es que te falten datos. Es que están desordenados.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(170px, 45%), 1fr)); gap: 14px;">
+        <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 18px; padding: clamp(20px, 1.8vw, 26px) clamp(16px, 1.6vw, 24px); display: flex; flex-direction: column; gap: 14px; min-height: 150px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E2881C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9.5h18M3 15h18M9.5 9.5V20M15 9.5V20"></path></svg>
+          <span style="font-size: clamp(15px, 1.15vw, 16.5px); font-weight: 700; color: #18163F; line-height: 1.3;">Los precios en una hoja de cálculo</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 18px; padding: clamp(20px, 1.8vw, 26px) clamp(16px, 1.6vw, 24px); display: flex; flex-direction: column; gap: 14px; min-height: 150px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E2881C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z"></path><path d="M9.5 8h5M9.5 12h5"></path></svg>
+          <span style="font-size: clamp(15px, 1.15vw, 16.5px); font-weight: 700; color: #18163F; line-height: 1.3;">El registro de ventas por otro lado</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 18px; padding: clamp(20px, 1.8vw, 26px) clamp(16px, 1.6vw, 24px); display: flex; flex-direction: column; gap: 14px; min-height: 150px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E2881C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5h18v10a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-10Z"></path><path d="M3 7.5 12 4l9 3.5"></path><path d="M15.5 13.5h2.5"></path></svg>
+          <span style="font-size: clamp(15px, 1.15vw, 16.5px); font-weight: 700; color: #18163F; line-height: 1.3;">Las cuentas corrientes en otro lugar</span>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 18px; padding: clamp(20px, 1.8vw, 26px) clamp(16px, 1.6vw, 24px); display: flex; flex-direction: column; gap: 14px; min-height: 150px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E2881C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="14" height="11" rx="1.6"></rect><path d="M2.5 8.5h14"></path><path d="M8 19h13.5V9.5"></path></svg>
+          <span style="font-size: clamp(15px, 1.15vw, 16.5px); font-weight: 700; color: #18163F; line-height: 1.3;">Las listas de proveedores en distintas páginas</span>
+        </div>
+      </div>
+      <p style="margin: clamp(26px, 2.4vw, 36px) 0 0; font-size: clamp(17px, 1.5vw, 21px); font-weight: 700; font-style: italic; color: #18163F; line-height: 1.45;">Cada dato suelto es una decisión que tomás a ojo.</p>
+    </div>
+  </section>
+
+  <section id="ia" data-screen-label="Centraliza + IA" style="background: #18163F; color: #FFFFFF; padding: clamp(64px, 7vw, 112px) 22px clamp(68px, 7vw, 116px);">
+    <div style="max-width: 1140px; margin: 0 auto;">
+      <div style="width: 64px; height: 4px; border-radius: 3px; background: linear-gradient(90deg, #3976C4, #5155EC); margin-bottom: clamp(26px, 2.4vw, 34px);"></div>
+      <h2 style="margin: 0 0 20px; max-width: 900px; font-size: clamp(25px, 3.3vw, 44px); line-height: 1.15; font-weight: 800; letter-spacing: -0.015em; text-wrap: pretty;">Boxer centraliza los datos de tu negocio.</h2>
+      <p style="margin: 0 0 24px; max-width: 760px; font-size: clamp(16.5px, 1.35vw, 19px); line-height: 1.6; color: rgba(255,255,255,0.82); text-wrap: pretty;">Ventas, stock, precios, cuentas corrientes y presupuestos dejan de estar repartidos en planillas, cuadernos y páginas sueltas. Pasan a estar en un mismo sistema, actualizados y conectados entre sí.</p>
+      <p style="margin: 0 0 clamp(36px, 3.4vw, 54px); max-width: 780px; font-size: clamp(17.5px, 1.7vw, 24px); font-weight: 700; font-style: italic; line-height: 1.4; text-wrap: pretty;">Y cuando los datos están ordenados, recién ahí la IA empieza a servir de verdad.</p>
+
+      <div style="max-width: 920px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(14px, 1.4vw, 20px);">
+        <div style="background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: clamp(26px, 2.4vw, 36px);">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#bxg1)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="bxg1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#3976C4"></stop><stop offset="1" stop-color="#5155EC"></stop></linearGradient></defs><path d="M21 12a8 8 0 1 1-3.2-6.4"></path><path d="M9.5 9a2.5 2.5 0 1 1 3.4 2.3c-.7.3-1.1.9-1.1 1.7v.5"></path><path d="M11.8 16.6h.02"></path></svg>
+          <h3 style="margin: 20px 0 8px; font-size: clamp(19px, 1.6vw, 23px); font-weight: 800; line-height: 1.25;">Preguntale a tu sistema</h3>
+          <p style="margin: 0; font-size: clamp(15px, 1.2vw, 17px); line-height: 1.55; color: rgba(255,255,255,0.72);">Qué se vendió, qué se frenó y qué conviene reponer.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: clamp(26px, 2.4vw, 36px);">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#bxg2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="bxg2" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#3976C4"></stop><stop offset="1" stop-color="#5155EC"></stop></linearGradient></defs><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5V12l3.2 2"></path></svg>
+          <h3 style="margin: 20px 0 8px; font-size: clamp(19px, 1.6vw, 23px); font-weight: 800; line-height: 1.25;">Encontrá la plata dormida</h3>
+          <p style="margin: 0; font-size: clamp(15px, 1.2vw, 17px); line-height: 1.55; color: rgba(255,255,255,0.72);">El stock que hace seis meses no se mueve y te tiene el capital parado.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: clamp(26px, 2.4vw, 36px);">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#bxg3)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="bxg3" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#3976C4"></stop><stop offset="1" stop-color="#5155EC"></stop></linearGradient></defs><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 17h4"></path></svg>
+          <h3 style="margin: 20px 0 8px; font-size: clamp(19px, 1.6vw, 23px); font-weight: 800; line-height: 1.25;">Cobrá lo que te deben a tiempo</h3>
+          <p style="margin: 0; font-size: clamp(15px, 1.2vw, 17px); line-height: 1.55; color: rgba(255,255,255,0.72);">Recibi los clientes que tienen comprobantes vencidos y sus deudas totales</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: clamp(26px, 2.4vw, 36px);">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#bxg4)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="bxg4" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#3976C4"></stop><stop offset="1" stop-color="#5155EC"></stop></linearGradient></defs><path d="M4 20V10M10 20V5M16 20v-7M22 20H2"></path></svg>
+          <h3 style="margin: 20px 0 8px; font-size: clamp(19px, 1.6vw, 23px); font-weight: 800; line-height: 1.25;">Recuperá clientes que ya no te compran</h3>
+          <p style="margin: 0; font-size: clamp(15px, 1.2vw, 17px); line-height: 1.55; color: rgba(255,255,255,0.72);">Analizá cuales son esos clientes frecuentes que no aparecen hace meses para recuperarlos</p>
+        </div>
+      </div>
+
+      <div style="margin-top: clamp(34px, 3vw, 48px); max-width: 920px; padding: clamp(22px, 2vw, 30px); border-radius: 20px; background: rgba(255,255,255,0.05); border-left: 3px solid #E2881C;">
+        <p style="margin: 0; font-size: clamp(17.5px, 1.6vw, 22px); font-weight: 700; line-height: 1.4; text-wrap: pretty;">La IA no hace magia sobre un desorden. Por eso primero el sistema.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="curso" data-screen-label="Curso" style="background: #F9F9F9; padding: clamp(62px, 7vw, 108px) 22px clamp(66px, 7vw, 112px);">
+    <div style="max-width: 1140px; margin: 0 auto;">
+      <span style="display: inline-flex; padding: 7px 16px; border-radius: 999px; background: #E2881C; color: #FFFFFF; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;">Gratis</span>
+      <h2 style="margin: 16px 0 12px; max-width: 860px; font-size: clamp(25px, 3.3vw, 44px); line-height: 1.15; font-weight: 800; color: #18163F; letter-spacing: -0.015em; text-wrap: pretty;">Curso básico de Claude para casas de repuestos</h2>
+      <p style="margin: 0 0 clamp(30px, 3vw, 46px); max-width: 700px; font-size: clamp(16px, 1.3vw, 18.5px); line-height: 1.6; color: #4A4A55; text-wrap: pretty;">Aprendé a usar IA en tu negocio desde cero. Sin vueltas técnicas, con ejemplos del mostrador.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: clamp(24px, 2.6vw, 40px); align-items: start;">
+        <div>
+          <div class="cond" data-cond="videoPlaying">
+            <div style="border-radius: 20px; overflow: hidden; background: #18163F; aspect-ratio: 16 / 9;">
+              <iframe data-src="https://www.youtube-nocookie.com/embed/XNxMlu5IGw0?rel=0&amp;modestbranding=1&amp;autoplay=1" title="Clase 1" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen style="width: 100%; height: 100%; border: 0; display: block;"></iframe>
+            </div>
+          </div>
+          <div class="cond" data-cond="videoIdle">
+            <div role="button" tabindex="0" aria-label="Reproducir Clase 1" id="video-play" style="border-radius: 20px; overflow: hidden; background-color: #18163F; background-image: url('img/portada-clase-1.png'); background-size: cover; background-position: center; position: relative; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+              <div style="position: relative; width: 66px; height: 66px; border-radius: 999px; background: linear-gradient(135deg, #3976C4 0%, #5155EC 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.28);" class="hv2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF" style="margin-left: 3px;"><path d="M8 5.5v13l11-6.5-11-6.5Z"></path></svg>
+              </div>
+              <span style="position: absolute; bottom: 14px; left: 16px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.7); letter-spacing: 0.04em; text-transform: uppercase;">CLASE 1 ADELANTO</span>
+            </div>
+          </div>
+          <p style="margin: 16px 0 0; font-size: 14.5px; color: #6B6B77; line-height: 1.5;">Adelanto del curso — Para recibir las 3 clases completas, llená el formulario</p>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 24px; padding: clamp(26px, 2.4vw, 38px) clamp(20px, 2vw, 34px);">
+          <div class="cond" data-cond="cursoDone">
+            <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start; padding: 8px 0;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E2881C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.6 2.5L16 9.5"></path></svg>
+              <p style="margin: 0; font-size: clamp(18px, 1.5vw, 21px); font-weight: 800; color: #18163F; line-height: 1.35;">Listo. Revisá tu mail — te mandamos el acceso a las clases.</p>
+            </div>
+          </div>
+          <div class="cond" data-cond="cursoOpen">
+            <form id="form-curso" novalidate style="display: flex; flex-direction: column; gap: 12px;">
+              <input type="hidden" name="origen" value="CERAC-Locro">
+              <h3 style="margin: 0 0 6px; font-size: clamp(20px, 1.8vw, 26px); font-weight: 800; color: var(--bx-blue-secondary); line-height: 1.25">Recibí las 3 clases gratis</h3>
+              <label style="font-size: 12.5px; font-weight: 700; color: #18163F; text-transform: uppercase; letter-spacing: 0.05em;">Nombre</label>
+              <input name="nombre" style="padding: 15px 16px; font-size: 16px; border: 1px solid #DCDCE0; border-radius: 12px; background: #FCFCFD; color: #18163F;">
+              <div class="cond" data-cond="e.nombre"><span style="font-size: 13px; font-weight: 600; color: #C0392B;"></span></div>
+              <label style="font-size: 12.5px; font-weight: 700; color: #18163F; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Apellido</label>
+              <input name="apellido" style="padding: 15px 16px; font-size: 16px; border: 1px solid #DCDCE0; border-radius: 12px; background: #FCFCFD; color: #18163F;">
+              <div class="cond" data-cond="e.apellido"><span style="font-size: 13px; font-weight: 600; color: #C0392B;"></span></div>
+              <label style="font-size: 12.5px; font-weight: 700; color: #18163F; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Email</label>
+              <input name="email" type="email" style="padding: 15px 16px; font-size: 16px; border: 1px solid #DCDCE0; border-radius: 12px; background: #FCFCFD; color: #18163F;">
+              <div class="cond" data-cond="e.email"><span style="font-size: 13px; font-weight: 600; color: #C0392B;"></span></div>
+              <label style="font-size: 12.5px; font-weight: 700; color: #18163F; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Número de WhatsApp</label>
+              <input name="whatsapp" type="tel" style="padding: 15px 16px; font-size: 16px; border: 1px solid #DCDCE0; border-radius: 12px; background: #FCFCFD; color: #18163F;">
+              <div class="cond" data-cond="e.whatsapp"><span style="font-size: 13px; font-weight: 600; color: #C0392B;"></span></div>
+              <label style="font-size: 12.5px; font-weight: 700; color: #18163F; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px;">Nombre del negocio</label>
+              <input name="negocio" style="padding: 15px 16px; font-size: 16px; border: 1px solid #DCDCE0; border-radius: 12px; background: #FCFCFD; color: #18163F;">
+              <div class="cond" data-cond="e.negocio"><span style="font-size: 13px; font-weight: 600; color: #C0392B;"></span></div>
+              <button type="submit" id="btn-curso" style="margin-top: 12px; padding: 17px 24px; border: 0; border-radius: 999px; background: linear-gradient(135deg, #3976C4 0%, #5155EC 100%); color: #FFFFFF; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; cursor: pointer;" class="hv3">Enviarme las clases</button>
+              <div class="cond" data-cond="cursoError">
+                <span style="font-size: 13.5px; font-weight: 600; color: #C0392B; line-height: 1.45;">No se pudo enviar. Probá de nuevo o <a href="https://wa.me/5491153860415?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20Boxer.%20Los%20vi%20en%20el%20locro%20de%20CERAC" target="_blank" rel="noopener" style="color: #C0392B; text-decoration: underline;">escribinos por WhatsApp</a>.</span>
+              </div>
+              <span style="font-size: 13px; color: #6B6B77; line-height: 1.4; text-align: center">Te llega el acceso a las clases por WhatsApp.</span>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: clamp(40px, 4vw, 64px); padding-top: clamp(32px, 3vw, 48px); border-top: 1px solid #E4E4E8;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+          <div style="flex: 1 1 220px; background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 14px; padding: 18px 20px; font-size: clamp(15px, 1.15vw, 16.5px); font-weight: 700; color: #18163F;">Asesoramiento personalizado según tu tipo de negocio</div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E2881C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto;"><path d="M4 12h14"></path><path d="M13 6.5 19.5 12 13 17.5"></path></svg>
+          <div style="flex: 1 1 220px; background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 14px; padding: 18px 20px; font-size: clamp(15px, 1.15vw, 16.5px); font-weight: 700; color: #18163F;">Capacitación a tu equipo al implementar Boxer Gestión</div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E2881C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto;"><path d="M4 12h14"></path><path d="M13 6.5 19.5 12 13 17.5"></path></svg>
+          <div style="flex: 1 1 220px; background: #FFFFFF; border: 1px solid #E7E7E9; border-radius: 14px; padding: 18px 20px; font-size: clamp(15px, 1.15vw, 16.5px); font-weight: 700; color: #18163F;">Talleres de IA y Cursos exlcusivos a clientes</div>
+        </div>
+        <p style="margin: clamp(20px, 2vw, 28px) 0 0; font-size: clamp(16.5px, 1.4vw, 20px); font-weight: 700; font-style: italic; color: #18163F; line-height: 1.45; text-align: center">No te dejamos solo con la IA. Te acompañamos a usarla.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Números" style="background: #FFFFFF; padding: clamp(52px, 5vw, 84px) 22px;">
+    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(14px, 2vw, 32px); text-align: center;">
+      <div>
+        <div style="font-size: clamp(38px, 5vw, 72px); font-weight: 800; color: #E2881C; line-height: 1;">8</div>
+        <div style="margin-top: 10px; font-size: clamp(13px, 1.1vw, 16px); font-weight: 700; color: #18163F; line-height: 1.35;">años en el rubro</div>
+      </div>
+      <div>
+        <div style="font-size: clamp(38px, 5vw, 72px); font-weight: 800; color: #E2881C; line-height: 1;">+600</div>
+        <div style="margin-top: 10px; font-size: clamp(13px, 1.1vw, 16px); font-weight: 700; color: #18163F; line-height: 1.35;">negocios usando Boxer</div>
+      </div>
+      <div>
+        <div style="font-size: clamp(38px, 5vw, 72px); font-weight: 800; color: #E2881C; line-height: 1;">+10</div>
+        <div style="margin-top: 10px; font-size: clamp(13px, 1.1vw, 16px); font-weight: 700; color: #18163F; line-height: 1.35;">capacitaciones de tecnología e IA para el rubro</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" data-screen-label="Demo" style="background: #18163F; color: #FFFFFF; padding: clamp(62px, 7vw, 108px) 22px clamp(70px, 7vw, 112px);">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h2 style="margin: 0 0 clamp(30px, 3vw, 40px); font-size: clamp(25px, 3vw, 40px); line-height: 1.15; font-weight: 800; letter-spacing: -0.015em; text-wrap: pretty;">Contanos de tu negocio y te mostramos Boxer funcionando.</h2>
+      <div class="cond" data-cond="demoDone">
+        <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start; padding: 8px 0 20px;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E2881C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.6 2.5L16 9.5"></path></svg>
+          <p style="margin: 0; font-size: clamp(19px, 1.6vw, 22px); font-weight: 800; line-height: 1.35;">Listo. Te contactamos a la brevedad.</p>
+        </div>
+      </div>
+      <div class="cond" data-cond="demoOpen">
+        <form id="form-demo" style="display: flex; flex-direction: column; gap: 12px;">
+          <input type="hidden" name="origen" value="CERAC-Locro">
+          <label style="font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.75);">Nombre y apellido</label>
+          <input name="nombre" required="" style="padding: 15px 16px; font-size: 16px; border: 1px solid rgba(255,255,255,0.22); border-radius: 12px; background: rgba(255,255,255,0.06); color: #FFFFFF;">
+          <label style="font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.75); margin-top: 4px;">WhatsApp</label>
+          <input name="whatsapp" type="tel" required="" style="padding: 15px 16px; font-size: 16px; border: 1px solid rgba(255,255,255,0.22); border-radius: 12px; background: rgba(255,255,255,0.06); color: #FFFFFF;">
+          <label style="font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.75); margin-top: 4px;">Nombre del negocio</label>
+          <input name="negocio" required="" style="padding: 15px 16px; font-size: 16px; border: 1px solid rgba(255,255,255,0.22); border-radius: 12px; background: rgba(255,255,255,0.06); color: #FFFFFF;">
+          <label style="font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.75); margin-top: 4px;">Tipo de negocio</label>
+          <select name="tipo" required="" style="padding: 15px 16px; font-size: 16px; border: 1px solid rgba(255,255,255,0.22); border-radius: 12px; background: #221F4C; color: #FFFFFF;">
+            <option value="Casa de repuestos">Casa de repuestos</option>
+            <option value="Taller">Taller</option>
+            <option value="Lubricentro">Lubricentro</option>
+          </select>
+          <label style="font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.75); margin-top: 4px;">¿Qué te interesa?</label>
+          <select name="interes" required="" style="padding: 15px 16px; font-size: 16px; border: 1px solid rgba(255,255,255,0.22); border-radius: 12px; background: #221F4C; color: #FFFFFF;">
+            <option value="Conocer Boxer">Conocer Boxer</option>
+            <option value="Sumar IA a mi negocio">Sumar IA a mi negocio</option>
+            <option value="Capacitar a mi equipo">Capacitar a mi equipo</option>
+          </select>
+          <button type="submit" id="btn-demo" style="margin-top: 12px; padding: 18px 24px; border: 0; border-radius: 999px; background: #E2881C; color: #FFFFFF; font-size: 15.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; cursor: pointer;" class="hv4">Pedir mi demo</button>
+          <div class="cond" data-cond="demoError">
+            <span style="font-size: 13.5px; font-weight: 600; color: #FFB3A7; line-height: 1.45;">No se pudo enviar. Probá de nuevo o <a href="https://wa.me/5491153860415?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20Boxer.%20Los%20vi%20en%20el%20locro%20de%20CERAC" target="_blank" rel="noopener" style="color: #FFB3A7; text-decoration: underline;">escribinos por WhatsApp</a>.</span>
+          </div>
+        </form>
+      </div>
+      <a href="https://wa.me/5491153860415?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20Boxer.%20Los%20vi%20en%20el%20locro%20de%20CERAC" target="_blank" rel="noopener" style="margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 24px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,0.5); color: #FFFFFF; font-size: 15px; font-weight: 700;" class="hv5">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.6a8.4 8.4 0 0 1-12.6 7.3L3.5 20.5l1.6-4.8A8.4 8.4 0 1 1 21 11.6Z"></path></svg>
+        O escribinos ahora por WhatsApp
+      </a>
+      
+    </div>
+  </section>
+
+  <footer data-screen-label="Pie" style="background: #18163F; color: #FFFFFF; padding: 36px 22px 48px; border-top: 1px solid rgba(255,255,255,0.12);">
+    <div style="max-width: 1140px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px;">
+      <img src="img/logo-boxer-blanco.png" alt="Boxer Gestión" style="width: 116px; height: auto; display: block;">
+      <div style="display: flex; gap: 18px; align-items: center;">
+        <a href="#" style="color: rgba(255,255,255,0.75); font-size: 13.5px; font-weight: 600;" class="hv6">Instagram</a>
+        <a href="#" style="color: rgba(255,255,255,0.75); font-size: 13.5px; font-weight: 600;" class="hv7">Facebook</a>
+        <a href="#" style="color: rgba(255,255,255,0.75); font-size: 13.5px; font-weight: 600;" class="hv8">LinkedIn</a>
+      </div>
+      <p style="margin: 0; font-size: 15px; font-weight: 700; font-style: italic; color: rgba(255,255,255,0.9);">El rubro no para. Nosotros tampoco.</p>
+    </div>
+  </footer>
+
+</div>
+<script>
+
+(function () {
+  var WEBHOOK = "https://diegooabanto.app.n8n.cloud/webhook/boxer-cerac";
+  var WA = "https://wa.me/5491153860415?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20Boxer.%20Los%20vi%20en%20el%20locro%20de%20CERAC";
+
+  function show(name, on) {
+    document.querySelectorAll('[data-cond="' + name + '"]').forEach(function (el) {
+      el.classList.toggle('on', !!on);
+    });
+  }
+  function setErr(field, msg) {
+    var box = document.querySelector('[data-cond="e.' + field + '"]');
+    if (!box) return;
+    var span = box.querySelector('span');
+    if (span) span.textContent = msg || '';
+    box.classList.toggle('on', !!msg);
+  }
+
+  ['videoIdle', 'cursoOpen', 'demoOpen'].forEach(function (n) { show(n, true); });
+
+  var play = document.getElementById('video-play');
+  if (play) {
+    var arrancar = function () {
+      var f = document.querySelector('[data-cond="videoPlaying"] iframe');
+      if (f && !f.src) f.src = f.getAttribute('data-src');
+      show('videoIdle', false);
+      show('videoPlaying', true);
+    };
+    play.addEventListener('click', arrancar);
+    play.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); arrancar(); }
+    });
+  }
+
+  function post(data) {
+    return fetch(WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (r) {
+      if (!r.ok) throw new Error('http ' + r.status);
+      return r;
+    });
+  }
+
+  var curso = document.getElementById('form-curso');
+  if (curso) {
+    curso.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var btn = document.getElementById('btn-curso');
+      if (btn && btn.disabled) return;
+      var d = new FormData(curso);
+      var v = function (k) { return (d.get(k) || '').trim(); };
+      var ok = true;
+      [['nombre', 'Escribí tu nombre'],
+       ['apellido', 'Escribí tu apellido'],
+       ['negocio', 'Escribí el nombre de tu negocio']].forEach(function (p) {
+        if (!v(p[0])) { setErr(p[0], p[1]); ok = false; } else setErr(p[0], '');
+      });
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) { setErr('email', 'Revisá el email'); ok = false; } else setErr('email', '');
+      if (v('whatsapp').replace(/[^0-9]/g, '').length < 8) { setErr('whatsapp', 'Revisá el número'); ok = false; } else setErr('whatsapp', '');
+      if (!ok) return;
+
+      show('cursoError', false);
+      if (btn) { btn.disabled = true; btn.textContent = 'Enviando...'; }
+      post({
+        tipo: 'curso', nombre: v('nombre'), apellido: v('apellido'), email: v('email'),
+        whatsapp: v('whatsapp'), negocio: v('negocio'), origen: 'CERAC-Locro'
+      }).then(function () {
+        show('cursoOpen', false);
+        show('cursoDone', true);
+      }).catch(function () {
+        show('cursoError', true);
+        if (btn) { btn.disabled = false; btn.textContent = 'Enviarme las clases'; }
+      });
+    });
+  }
+
+  var demo = document.getElementById('form-demo');
+  if (demo) {
+    demo.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var btn = document.getElementById('btn-demo');
+      if (btn && btn.disabled) return;
+      var d = new FormData(demo);
+      var v = function (k) { return (d.get(k) || '').trim(); };
+      if (!v('nombre') || v('whatsapp').replace(/[^0-9]/g, '').length < 8 || !v('negocio')) {
+        show('demoError', true);
+        return;
+      }
+      show('demoError', false);
+      if (btn) { btn.disabled = true; btn.textContent = 'Enviando...'; }
+      post({
+        tipo: 'demo', nombre: v('nombre'), whatsapp: v('whatsapp'), negocio: v('negocio'),
+        tipo_negocio: v('tipo'), interes: v('interes'), origen: 'CERAC-Locro'
+      }).then(function () {
+        show('demoOpen', false);
+        show('demoDone', true);
+      }).catch(function () {
+        show('demoError', true);
+        if (btn) { btn.disabled = false; btn.textContent = 'Pedir mi demo'; }
+      });
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
