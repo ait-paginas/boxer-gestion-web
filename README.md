@@ -158,8 +158,8 @@ deploy contexts**:
 - Production branch: `main`
 - **Branch deploys: All** (es lo que da la vista previa de cada rama)
 
-Después, anotar el nombre del sitio de Netlify en `CLAUDE.md` (donde dice
-`SITIO_NETLIFY: PENDIENTE`) para que Claude arme el link de la vista previa.
+El proyecto de Netlify se llama `boxergestionsoftware`: la vista previa de una
+rama queda en `https://<rama>--boxergestionsoftware.netlify.app`.
 
 ## Sumar una página nueva
 

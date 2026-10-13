@@ -51,9 +51,9 @@ node scripts/capturas.cjs <scratchpad>/capturas <paginas-tocadas.html>
 
 ### 5. Vista previa
 Netlify publica cada rama en
-`https://<rama-con-guiones>--SITIO_NETLIFY.netlify.app` (las `/` de la rama
-pasan a `-`). **SITIO_NETLIFY: PENDIENTE** — completarlo acá cuando Joana
-conecte Netlify (es el nombre que figura en Site configuration).
+`https://<rama-con-guiones>--boxergestionsoftware.netlify.app` (las `/` de la
+rama pasan a `-`; ej. `cambio/precio-pro` → `cambio-precio-pro--boxergestionsoftware.netlify.app`).
+Proyecto de Netlify: `boxergestionsoftware`.
 
 Esperar a que la vista previa tenga el cambio (comparar con curl un archivo
 tocado contra el de la rama; tarda 1-2 min) y pasar el link. Si la vista
