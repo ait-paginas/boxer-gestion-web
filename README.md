@@ -2,9 +2,9 @@
 
 Este repo **es** la web: lo que está en `main` es lo que Netlify publica en
 boxergestion.com. HTML estático, sin paso de build. Cada commit a `main` sale
-publicado en uno o dos minutos, por eso **los cambios se hacen en una rama y se
-revisan en la vista previa antes de pasar a `main`** (ver "Cómo trabajar en
-equipo").
+publicado en uno o dos minutos, por eso **los cambios se piden a Claude, que los
+hace en una rama, los muestra en una vista previa y solo los pasa a `main` con
+aprobación** (ver "Cómo trabajar en equipo").
 
 Hasta el 2026-10-13 vivía en `web/boxer-gestion/` del repo del agente
 (`joanavillarreal/agente-ga-web`). El historial anterior está ahí.
@@ -26,6 +26,8 @@ Hasta el 2026-10-13 vivía en `web/boxer-gestion/` del repo del agente
 | `assets/` `uploads/` `img/` | Imágenes. `img/` la usan solo las landings viejas | — |
 | `robots.txt` `sitemap.xml` `og-image.png` | SEO | — |
 | `netlify.toml` | Le dice a Netlify que publique la raíz tal cual | — |
+| `CLAUDE.md` | El proceso que sigue Claude para cada cambio | — |
+| `scripts/` | Chequeos y capturas que corre Claude antes de publicar. `netlify.toml` los oculta de la web, igual que este README y `CLAUDE.md` | — |
 
 ## La landing de Ads: cómo funciona `?tema=`
 
@@ -93,82 +95,71 @@ tranquilidad.
 
 ## Cómo trabajar en equipo
 
-**Regla única: nada llega a `main` sin haberse visto antes en una vista previa.**
-`main` es la web publicada; todo lo demás es borrador. Cualquiera del equipo
-puede hacer cambios y publicarlos: no hace falta que otra persona apruebe, sí
-que quien hace el cambio lo haya revisado en la vista previa.
+**El equipo no edita el repo a mano: los cambios se piden a Claude.** Claude
+sigue siempre el mismo proceso, escrito en `CLAUDE.md`, y **nada llega a la
+web sin que la persona que pidió el cambio lo apruebe** después de verlo.
 
 ```
-rama (borrador)  ──►  vista previa en Netlify  ──►  checklist OK  ──►  merge a main  ──►  publicado
+pedido  ►  rama nueva  ►  cambio  ►  chequeos + capturas  ►  vista previa
+        ►  "¿Está todo OK para pasarlo a la web?"  ►  "sí, publicar"  ►  main  ►  boxergestion.com
 ```
 
-### 1. Hacer el cambio en una rama
+### Cómo pedir un cambio
+1. Abrir una sesión en claude.ai/code con el repo
+   `joanavillarreal/boxer-gestion-web`.
+2. Pedirlo con palabras normales: *"En planes, el plan Pro pasa a 45.000"*,
+   *"Cambiá la foto de Diego en la home por esta"* (adjuntando la imagen),
+   *"Armame una landing para la promo de noviembre como la de asesoría"*.
+3. Claude hace el cambio en una rama aparte (la web no se entera), corre los
+   chequeos y manda **capturas de compu y celular** y el **link de la vista
+   previa**.
+4. Mirar la vista previa. Si algo no va, pedir el ajuste en la misma sesión.
+5. Cuando está bien, responder **"sí, publicar"**. Recién ahí Claude lo pasa a
+   `main`, y en uno o dos minutos está en boxergestion.com. Claude lo verifica
+   y avisa.
 
-Desde github.com, en cualquier archivo:
-1. Tocar el lápiz ("Edit this file") y hacer el cambio.
-2. En "Commit changes…" elegir **"Create a new branch for this commit"** y
-   ponerle un nombre corto que diga qué es: `precio-plan-pro`, `fotos-home`.
-3. Si hay más cambios, seguir editando **en esa misma rama** (arriba a la
-   izquierda, el selector de rama tiene que mostrar ese nombre, no `main`).
+### Qué chequea Claude antes de preguntar
+`scripts/chequear.py` (corre en cada cambio):
+- **Frena** si algo se rompe: un archivo o imagen que no existe, un formulario
+  con un token o webhook que n8n no conoce, una página con formulario sin la
+  conversión de Google Ads o el píxel de Meta, HTML mal cerrado, falta de
+  título o descripción, algo que parezca un secreto.
+- **Avisa como "cambio protegido"** si se tocó algo de "Lo que NO hay que
+  tocar" en una página que ya existía (tokens, nombres de campos, valores del
+  tipo de negocio, etiquetas). Esos cambios se aprueban diciendo además que
+  Joana está al tanto: "sí, publicar, Joana lo sabe".
 
-Nunca elegir "Commit directly to the main branch": eso publica al instante,
-sin vista previa.
+`scripts/capturas.cjs` saca las capturas y avisa de errores de JS, archivos que
+no cargan y páginas que se desbordan en el celular.
 
-### 2. Mirar la vista previa
-
-Netlify publica cada rama en su propia dirección, sin tocar la web real:
-
-`https://NOMBRE-DE-LA-RAMA--NOMBRE-DEL-SITIO.netlify.app`
-
-(el nombre del sitio es el de Netlify, el que aparece en Site configuration).
-Tarda uno o dos minutos después de cada commit. También se ve en Netlify →
-Deploys, filtrando por rama.
-
-### 3. Checklist antes de publicar
-
-En la vista previa, en compu **y** en celular:
-
-- [ ] La página que cambié se ve bien y dice lo que tiene que decir.
-- [ ] Menú y links llevan a donde tienen que llevar.
-- [ ] Las imágenes cargan (ninguna rota).
-- [ ] Si toqué una página con formulario: lo envié con nombre **PRUEBA** y
-      apareció el mensaje de enviado. (Crea un prospecto real en Bitrix:
-      avisar para que lo descarten.)
-- [ ] No toqué nada de la lista de "Lo que NO hay que tocar", o si lo toqué,
-      Joana lo sabe.
-
-### 4. Publicar (merge a main)
-
-En GitHub el botón de merge vive en un "Pull Request", y se usa solo como
-botón: lo abre y lo mergea la misma persona que hizo el cambio.
-
-1. En la página del repo aparece un aviso amarillo "NOMBRE had recent pushes"
-   con el botón **"Compare & pull request"**. Tocarlo.
-2. En la descripción, pegar el link de la vista previa y marcar el checklist.
-3. "Create pull request" y después **"Merge pull request"** → "Confirm merge".
-4. "Delete branch" para no acumular ramas viejas.
-5. En uno o dos minutos está en boxergestion.com. Mirarlo una vez más ahí.
+Los formularios **no se envían** en los chequeos (cada envío crea un prospecto
+real en Bitrix). Si el cambio tocó uno, probarlo una vez en la vista previa con
+nombre PRUEBA y avisar para que lo descarten.
 
 ### Si algo sale mal
-
 En Netlify → Deploys, elegir el deploy anterior que andaba y **"Publish
-deploy"**. Vuelve al instante. Después se corrige en una rama, con calma.
+deploy"**. Vuelve al instante. Después se le pide a Claude que lo corrija, con
+el mismo proceso.
 
 ### Sumar a alguien al equipo
+Cada persona necesita poder abrir sesiones de Claude Code con este repo:
+- una cuenta de GitHub invitada al repo (Settings → Collaborators → Add
+  people) y conectada a Claude. Aunque no lo edite a mano, Claude trabaja con
+  los permisos de la persona;
+- pasarle esta sección y "Lo que NO hay que tocar".
 
-- **GitHub:** Settings → Collaborators → Add people (usuario de GitHub o mail).
-  La persona acepta la invitación desde su mail.
-- **Netlify:** si un deploy de esa persona aparece bloqueado por "Git
-  contributor", sumarla en Netlify → Team → Members.
-- Pasarle este README: sobre todo "Lo que NO hay que tocar" y este checklist.
+Ojo: con permisos de escritura, técnicamente la persona podría editar `main`
+desde GitHub. El acuerdo es no hacerlo; bloquearlo del todo ("protección de
+rama") en un repo privado personal requiere GitHub Pro.
 
 ### Configuración de Netlify que hace falta (una sola vez)
-
 Site configuration → Build & deploy → Continuous deployment → **Branches and
 deploy contexts**:
 - Production branch: `main`
 - **Branch deploys: All** (es lo que da la vista previa de cada rama)
-- Deploy Previews: activado
+
+Después, anotar el nombre del sitio de Netlify en `CLAUDE.md` (donde dice
+`SITIO_NETLIFY: PENDIENTE`) para que Claude arme el link de la vista previa.
 
 ## Sumar una página nueva
 
@@ -191,12 +182,10 @@ Cada archivo `.html` en la raíz es una página: `promo-octubre.html` se ve en
    Si es una página permanente, sí: sacar el `noindex` y sumarla a
    `sitemap.xml`.
 5. Imágenes nuevas en `uploads/`.
-6. Seguir el mismo camino de siempre: rama, vista previa, checklist, merge.
+6. Como siempre: rama, chequeos, vista previa y aprobación antes de `main`.
 
-Claude puede hacer todo esto: en una sesión de Claude Code, pedirle que sume el
-repo `joanavillarreal/boxer-gestion-web` y describirle la página. Que trabaje
-en una rama y pase el link de la vista previa; el merge lo hace una persona
-después de revisarla.
+Todo esto lo hace Claude: alcanza con describirle la página (para qué
+campaña, qué tiene que decir, de cuál partir) y pasarle las imágenes.
 
 ### Cambio grande: versión nueva del diseño
 
