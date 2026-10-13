@@ -1,4 +1,4 @@
-# Netlify publica este repo tal cual desde GitHub (joanavillarreal/boxer-gestion-web, rama main).
+# Netlify publica este repo tal cual desde GitHub (ait-paginas/boxer-gestion-web, rama main).
 # En Netlify: Base directory vacio, Build command vacio, Publish directory = "."
 # Es HTML estatico: no hay paso de build.
 [build]

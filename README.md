@@ -106,7 +106,7 @@ pedido  ►  rama nueva  ►  cambio  ►  chequeos + capturas  ►  vista previ
 
 ### Cómo pedir un cambio
 1. Abrir una sesión en claude.ai/code con el repo
-   `joanavillarreal/boxer-gestion-web`.
+   `ait-paginas/boxer-gestion-web`.
 2. Pedirlo con palabras normales: *"En planes, el plan Pro pasa a 45.000"*,
    *"Cambiá la foto de Diego en la home por esta"* (adjuntando la imagen),
    *"Armame una landing para la promo de noviembre como la de asesoría"*.
