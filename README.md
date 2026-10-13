@@ -6,8 +6,9 @@ publicado en uno o dos minutos, por eso **los cambios se piden a Claude, que los
 hace en una rama, los muestra en una vista previa y solo los pasa a `main` con
 aprobación** (ver "Cómo trabajar en equipo").
 
-Hasta el 2026-10-13 vivía en `web/boxer-gestion/` del repo del agente
-(`joanavillarreal/agente-ga-web`). El historial anterior está ahí.
+El repo es de la organización **ait-paginas** de GitHub (las webs de AIT, un
+repo por sitio). Hasta el 2026-10-13 la web vivía en `web/boxer-gestion/` del
+repo del agente (`joanavillarreal/agente-ga-web`); el historial anterior está ahí.
 
 ## Qué es cada página
 
@@ -143,14 +144,17 @@ el mismo proceso.
 
 ### Sumar a alguien al equipo
 Cada persona necesita poder abrir sesiones de Claude Code con este repo:
-- una cuenta de GitHub invitada al repo (Settings → Collaborators → Add
-  people) y conectada a Claude. Aunque no lo edite a mano, Claude trabaja con
-  los permisos de la persona;
+- una cuenta de GitHub que sea miembro de la organización **ait-paginas**
+  con permiso de escritura en este repo (en la organización: People → Invite
+  member, y darle acceso al repo o a un equipo que lo tenga), conectada a
+  Claude. Aunque no lo edite a mano, Claude trabaja con los permisos de la
+  persona;
 - pasarle esta sección y "Lo que NO hay que tocar".
 
 Ojo: con permisos de escritura, técnicamente la persona podría editar `main`
 desde GitHub. El acuerdo es no hacerlo; bloquearlo del todo ("protección de
-rama") en un repo privado personal requiere GitHub Pro.
+rama" / rulesets) en un repo privado de una organización requiere el plan
+Team de GitHub.
 
 ### Configuración de Netlify que hace falta (una sola vez)
 Site configuration → Build & deploy → Continuous deployment → **Branches and
