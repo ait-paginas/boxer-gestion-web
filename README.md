@@ -84,7 +84,9 @@ se entere**. Ante la duda, preguntarle a Joana antes.
 6. **`assets/google-ads.js` y `assets/meta-pixel.js`**, y las líneas que los
    cargan en el `<head>` de cada página. Son la conversión de Google Ads
    (`AW-432396317`, cuenta 353-792-1854) y el píxel de Meta. Si se borran, las
-   campañas dejan de ver los leads.
+   campañas dejan de ver los leads. Lo mismo vale para el bloque de **Google
+   Analytics 4** (`G-12M94GPP1C`) que va primero en el `<head>` de cada página:
+   se pega igual en las páginas nuevas.
 7. **El guardado de UTM en `sessionStorage` dentro de `assets/boxer.js`.** Es lo
    que hace que un lead que entró por un anuncio a la home y completó el
    formulario en Planes llegue con su canal.
@@ -216,9 +218,14 @@ repo y abrir http://localhost:8000.
   internos usan `.html`; Netlify responde las dos formas.
 - **El `title` y la `description` de la home** son los que tenía la web vieja, a
   propósito: cambiarlos tira el posicionamiento ganado.
-- **No hay GA4 ni Tag Manager.** `boxer.js` ya hace
-  `dataLayer.push({event:'lead_formulario'})` en cada envío, listo para cuando
-  se instale.
+- **GA4 (`G-12M94GPP1C`) en todas las páginas desde 2026-11.** Es la etiqueta
+  tal cual la da Google (`gtm.js?id=G-…`, sin `gtag('config')`: la
+  configuración vive en el contenedor). Convive con `google-ads.js` sin duplicar
+  la conversión (probado). No hay Tag Manager. `boxer.js` hace
+  `dataLayer.push({event:'lead_formulario'})` en cada envío, pero GA4 por sí
+  solo no lee ese push: para tener el lead como evento en GA4 hace falta un
+  `gtag('event', 'generate_lead')` (pendiente). La landing de Ads no hace ese
+  push.
 - **`cerac-locro-2026.html`** tiene un select con `value="Taller"` y postea a
   otro webhook (`boxer-cerac`). No se revisó contra n8n: si se vuelve a usar,
   mirar ese flujo antes.
