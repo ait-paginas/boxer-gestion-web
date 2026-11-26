@@ -42,16 +42,90 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Módulos de Boxer Gestión — Ventas, stock, precios y Mercado Libre",
-  "description": "Recorré los módulos de Boxer Gestión: ventas y facturación ARCA, control de stock, listas de precios, cuentas corrientes, compras, informes y Mercado Libre.",
-  "url": "https://boxergestion.com/modulos",
-  "inLanguage": "es-AR",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Boxer Gestión",
-    "url": "https://boxergestion.com"
-  }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://boxergestion.com/modulos#webpage",
+      "url": "https://boxergestion.com/modulos",
+      "name": "Módulos de Boxer Gestión: ventas, stock, precios y Mercado Libre",
+      "description": "Módulos de Boxer Gestión: ventas y facturación ARCA, control de stock, listas de precios, cuentas corrientes, compras, informes y Mercado Libre.",
+      "inLanguage": "es-AR",
+      "isPartOf": {
+        "@id": "https://boxergestion.com/#website"
+      },
+      "about": {
+        "@id": "https://boxergestion.com/#software"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://boxergestion.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Módulos",
+          "item": "https://boxergestion.com/modulos"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Módulos de Boxer Gestión",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Actualización automática de listas de precios"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ventas rápidas (facturación ARCA) y presupuestos"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Caja diaria"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Cuentas corrientes de clientes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Cuentas corrientes de proveedores (compras)"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Comparativa de precios"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Control de stock"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Informes e integración con IA (Boxer + Claude)"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Integración con Mercado Libre"
+        }
+      ]
+    }
+  ]
 }
 </script>
 

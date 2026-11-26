@@ -42,23 +42,126 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Boxer Gestión",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "description": "Software de gestión exclusivo para casas de repuestos, talleres y lubricentros de Argentina",
-  "url": "https://boxergestion.com/",
-  "areaServed": "AR",
-  "inLanguage": "es-AR",
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "Boxer Gestión",
-    "url": "https://boxergestion.com"
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://boxergestion.com/#organization",
+      "name": "Boxer Gestión",
+      "alternateName": [
+        "Boxer Gestion",
+        "Boxer Gestión - Sistema para casas de repuestos",
+        "boxergestion.com"
+      ],
+      "url": "https://boxergestion.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://boxergestion.com/img/logo-boxer.png"
+      },
+      "image": "https://boxergestion.com/og-image.png",
+      "description": "Empresa argentina que desarrolla Boxer Gestión, el sistema de gestión exclusivo para casas de repuestos, talleres mecánicos y lubricentros.",
+      "slogan": "El software para tu casa de repuestos.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "knowsAbout": [
+        "Sistema de gestión para casas de repuestos",
+        "Software para autopartes",
+        "Facturación electrónica ARCA",
+        "Gestión de stock de repuestos",
+        "Actualización de listas de precios de proveedores",
+        "Integración con Mercado Libre"
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "AIT Solutions"
+      },
+      "sameAs": [
+        "https://www.instagram.com/boxergestion/",
+        "https://www.linkedin.com/company/boxer-gestion/",
+        "https://www.tiktok.com/@boxer.gestion"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://boxergestion.com/#website",
+      "url": "https://boxergestion.com/",
+      "name": "Boxer Gestión",
+      "inLanguage": "es-AR",
+      "publisher": {
+        "@id": "https://boxergestion.com/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://boxergestion.com/#software",
+      "name": "Boxer Gestión",
+      "alternateName": "Sistema de gestión para casas de repuestos Boxer",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Sistema de gestión (ERP) para casas de repuestos y autopartes",
+      "operatingSystem": "Web",
+      "url": "https://boxergestion.com/",
+      "image": "https://boxergestion.com/og-image.png",
+      "description": "Sistema de gestión 100 % web, exclusivo para casas de repuestos, talleres y lubricentros de Argentina: stock, ventas, facturación electrónica ARCA, actualización automática de listas de precios de proveedores, cuentas corrientes e integración con Mercado Libre, Tienda Nube y WooCommerce.",
+      "inLanguage": "es-AR",
+      "countriesSupported": "AR",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Casas de repuestos, distribuidoras de autopartes, talleres mecánicos y lubricentros",
+        "geographicArea": {
+          "@type": "Country",
+          "name": "Argentina"
+        }
+      },
+      "featureList": [
+        "Facturación electrónica ARCA (factura A, B y C automática)",
+        "Actualización diaria de listas de precios de proveedores",
+        "Búsqueda por código original, de proveedor, auxiliar o descripción",
+        "Unificación del mismo repuesto de varios proveedores (Piezas)",
+        "Control de stock y stock mínimo",
+        "Carga automática de facturas de compra",
+        "Cuentas corrientes de clientes y proveedores",
+        "Caja diaria, bancos y medios de pago",
+        "Presupuestos, remitos y notas de crédito",
+        "Integración con Mercado Libre, Tienda Nube y WooCommerce",
+        "Informes, IVA ventas y compras, dashboard",
+        "Boxer + Claude: consultas con inteligencia artificial sobre los datos del negocio",
+        "Migración asistida desde Excel u otro sistema"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "url": "https://boxergestion.com/planes",
+        "seller": {
+          "@id": "https://boxergestion.com/#organization"
+        }
+      },
+      "publisher": {
+        "@id": "https://boxergestion.com/#organization"
+      },
+      "provider": {
+        "@id": "https://boxergestion.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://boxergestion.com/#webpage",
+      "url": "https://boxergestion.com/",
+      "name": "Boxer Gestión: el sistema para casas de repuestos",
+      "description": "Software de gestión exclusivo para casas de repuestos, talleres y lubricentros de Argentina.",
+      "inLanguage": "es-AR",
+      "isPartOf": {
+        "@id": "https://boxergestion.com/#website"
+      },
+      "about": {
+        "@id": "https://boxergestion.com/#software"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://boxergestion.com/og-image.png"
+      }
+    }
+  ]
 }
 </script>
 

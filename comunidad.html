@@ -42,16 +42,39 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Comunidad Boxer — Capacitaciones y curso de IA para repuesteras",
-  "description": "Eventos, webinars y capacitaciones de la comunidad Boxer. Pedí el curso gratuito de IA aplicada a casas de repuestos, talleres y lubricentros.",
-  "url": "https://boxergestion.com/comunidad",
-  "inLanguage": "es-AR",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Boxer Gestión",
-    "url": "https://boxergestion.com"
-  }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://boxergestion.com/comunidad#webpage",
+      "url": "https://boxergestion.com/comunidad",
+      "name": "Comunidad Boxer: capacitaciones y curso de IA para repuesteras",
+      "description": "Comunidad de más de 600 repuesteras, talleres y lubricentros: grupo de WhatsApp, eventos y curso gratuito de IA.",
+      "inLanguage": "es-AR",
+      "isPartOf": {
+        "@id": "https://boxergestion.com/#website"
+      },
+      "about": {
+        "@id": "https://boxergestion.com/#software"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://boxergestion.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Comunidad",
+          "item": "https://boxergestion.com/comunidad"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
