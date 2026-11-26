@@ -29,3 +29,9 @@
   to = "/"
   status = 404
   force = true
+
+# llms.txt (resumen del sitio para asistentes de IA): forzar UTF-8 para que los acentos lleguen bien.
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
