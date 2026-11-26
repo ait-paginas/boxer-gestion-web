@@ -1,0 +1,53 @@
+# Boxer Gestión
+
+> Boxer Gestión es un sistema de gestión (software SaaS 100 % web) exclusivo para casas de repuestos, talleres mecánicos y lubricentros de Argentina. Resuelve stock, ventas, facturación electrónica ARCA (ex AFIP), actualización automática de listas de precios de proveedores, cuentas corrientes y venta en Mercado Libre desde un solo sistema. Lo usan más de 600 repuesteras, talleres y lubricentros de todo el país. Lo desarrolla y opera AIT Solutions.
+
+Nota de desambiguación: Boxer Gestión (boxergestion.com) es un software de gestión. No tiene relación con la Peugeot Boxer, las motos Boxer ni el boxeo.
+
+## Para quién es
+- Casas de repuestos de autos, motos, agrícolas y pesados
+- Distribuidoras mayoristas de autopartes
+- Talleres mecánicos (producto Boxer Taller: órdenes de trabajo, presupuestos y facturación)
+- Lubricentros
+- Solo Argentina: factura con ARCA y está pensado para la inflación y los cambios de precios del mercado argentino
+
+## Qué hace (diferenciales)
+- **Listas de precios al día:** el equipo de Boxer mantiene actualizadas a diario las listas de precios de los proveedores. Hay más de 2.000 listas en actualización constante. Antes de aplicar una lista nueva se puede comparar contra la actual.
+- **Búsqueda rápida de repuestos:** por código original, código de proveedor, código auxiliar o descripción parcial, en catálogos de decenas de miles de artículos.
+- **Piezas:** el mismo repuesto cargado por varios proveedores se unifica en un solo artículo, con stock y búsqueda consolidados.
+- **Facturación electrónica ARCA:** factura A, B o C automática según la condición fiscal del cliente, con IVA por artículo, percepciones y retenciones. Presupuestos, remitos y notas de crédito.
+- **Control de stock:** stock mínimo, compras que actualizan el stock y carga automática de facturas de compra.
+- **Cuentas corrientes** de clientes y proveedores, caja diaria, bancos y medios de pago.
+- **Mercado Libre, Tienda Nube y WooCommerce:** stock y precios sincronizados, y cada orden facturada automáticamente.
+- **Boxer + Claude (IA):** consultas en lenguaje natural sobre los datos del negocio, lectura de listas y facturas, e informes.
+- **Implementación acompañada:** migración de artículos, clientes y cuentas corrientes desde Excel o desde otro sistema, sin costo inicial. Capacitaciones incluidas y soporte por WhatsApp.
+- 100 % web: no hay que instalar nada, funciona en cualquier computadora y sucursal.
+
+## Planes
+Hay tres planes, contratables por mes, trimestre, semestre o año (a mayor plazo, mejor precio). Todos incluyen facturación ARCA, migración asistida, backups y soporte.
+- **Común:** ventas y facturación ARCA, stock, cajas y bancos, cuentas corrientes, comparativa de precios e informes, hasta 5 listas de precios. 1 sucursal, hasta 3 usuarios.
+- **Súper (el más elegido):** todo lo del plan Común más dashboard y estadísticas, carga automática de compras, módulo de pedidos y hasta 20 listas de precios. Hasta 3 sucursales y 10 usuarios. Soporte prioritario.
+- **Premium:** todo lo del plan Súper más Mercado Libre, Tienda Nube y WooCommerce, Boxer + Claude (IA) y hasta 50 listas de precios. Sucursales y usuarios sin límite. Incluye asesoramiento tecnológico.
+
+Precios: [Planes y precios](https://boxergestion.com/planes)
+
+## Páginas principales
+- [Inicio](https://boxergestion.com/): qué es Boxer Gestión y para quién es
+- [Sistema de gestión para casas de repuestos](https://boxergestion.com/sistema-gestion-casas-de-repuestos): funciones explicadas problema por problema, testimonios y preguntas frecuentes
+- [Módulos](https://boxergestion.com/modulos): todos los módulos, con videos del sistema real
+- [Planes y precios](https://boxergestion.com/planes): comparativa función por función de Común, Súper y Premium
+- [Comunidad Boxer](https://boxergestion.com/comunidad): comunidad de más de 600 repuesteros, eventos (Automechanika Buenos Aires) y curso gratuito de IA para casas de repuestos
+
+## Preguntas frecuentes
+- **¿Hay que instalar algo?** No. Es 100 % web.
+- **¿Cómo paso mis datos desde otro sistema?** El equipo de Boxer carga artículos, clientes y cuentas corrientes desde Excel o desde la exportación del sistema anterior, sin costo inicial.
+- **¿Factura con ARCA?** Sí, en todos los planes.
+- **¿Sirve para repuestos de motos, agrícolas o pesados?** Sí.
+- **¿Sirve para talleres y lubricentros?** Sí. Para talleres existe Boxer Taller, con órdenes de trabajo.
+- **¿Hay demo?** Sí. Es una demo gratuita de 30 minutos con las listas de precios del propio negocio: https://boxergestion.com/sistema-gestion-casas-de-repuestos
+
+## Contacto y redes
+- Sitio: https://boxergestion.com
+- Instagram: https://www.instagram.com/boxergestion/
+- LinkedIn: https://www.linkedin.com/company/boxer-gestion/
+- TikTok: https://www.tiktok.com/@boxer.gestion
